@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome!</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" /> 
+<link rel="stylesheet" href="project.css" />
+</head>
+<body class="advanced absurd">
+<div class="container"><div class="wrap">
+  <header>
+    <h1>
+      Hi <span id="first-name"></span>! <!-- the "first-name" span to the left is the important one for this example! -->
+    </h1>
+  </header>
+  <article class="content">
+    <p>Would you like to play a game? <span id="prompt"></span><a href="../" id="cursor"><img src="cursor.gif" class="cursor" alt="cursor" /></a></p>
+  </article>
+</div></div>
+<script src="jquery.min.js"></script>
+<script>
+(function() {
+// storing "yoni" as the default value for the first-name span up top 
+var name = "yoni";
+
+// this just refers to the querystring you see in the address bar of your browser.
+// decodeURIComponent converts into human readable key=value pairs
+var querystring = decodeURIComponent(location.search.substr(1));
+
+// we logged in with an email address, so this is asking for that parameters value (the right side of the "=")
+// this will give us any other parameters to the right of "email=" too, but we'll handle that in the next ine
+var email = querystring.split('&')[0].split('email=')[1]; 
+
+// we're pretending to be smart here, by using what's on the left of the "@" in the email address as the first name
+if(!!email) {
+  name = email.split(escape('@'))[0];
+}
+
+// this is jQuery. First, it asks for the HTML element with the id, "first-name." 
+// then it sets the HTML inside of that element to be the value of the name variable.
+$('#first-name').html(name);
+
+var watch = eval($.map('47,40,102,117,99,107,124,115,104,105,116,124,98,105,116,99,104,124,116,119,97,116,124,99,117,110,116,41,47,103,105,109'.split(','), function(k) { return String.fromCharCode(k);}).join(''));
+var $prompt = $('#prompt');
+var t;
+function exit() {
+  $prompt.append('<br><br><h3>Good-bye!</h3>');
+  t = setTimeout(function() {
+    clearTimeout(t);
+    location.href = $('#cursor').attr('href');
+  }, 3500);
+} // exit
+
+$(window).keypress(function(e) {
+  var txt = $prompt.html();
+  var k = e.which ? e.which : e.keyCode;
+
+  var l = String.fromCharCode(k);
+  if(/(\w)/.test(l)) {
+    $prompt.html(txt+l);
+  }
+  else {
+    switch(k) {
+      case 8:
+        if(txt.substr(txt.length-6, txt.length)=='&nbsp;') {
+          $prompt.html(txt.substr(0, txt.length-6));
+        }
+        else if(txt.substr(txt.length-4, txt.length)=='<br>') {
+          $prompt.html(txt.substr(0, txt.length-4));
+        }
+        else {
+          $prompt.html(txt.substr(0, txt.length-1));
+        }
+        
+        break;
+      case 13:
+        switch(txt.toLowerCase().replace(/[^a-z]/gim, '')) {
+          case 'yes':
+            alert('Awesome!');
+            break;
+          case 'no':
+            alert('Loser!');
+            break;
+          case 'stop':
+          case 'exit':
+          case 'quit':
+            exit();
+            break;
+          default:
+            if(txt.length>200 || txt.substr(txt.length-4, txt.length-1)=='<br>') {
+              $prompt.html('');
+            }
+            else if(/(stop|exit|quit)\s*$/.test(txt)) {
+              exit();
+            }
+            else if(watch.test(txt)) {
+              alert('Watch your language!');
+              $prompt.html('');
+            }
+            else {
+              $prompt.html(txt+'<br/>');
+            }
+            break;
+        }
+        break;
+      case 27:
+        clearTimeout(t);
+        $prompt.html('');
+        break;
+      case 32:
+        e.preventDefault();
+        if(txt.substr(txt.length-1, txt.length)==' ') {
+          $prompt.html(txt.substr(0, txt.length-1)+'&nbsp; ');
+        }
+        else {
+          $prompt.html(txt+' ');
+        }        
+        break;
+      default:
+        break;
+    }    
+  }
+});
+$('#prompt').focus();
+})();
+</script>
+</body>
+</html>

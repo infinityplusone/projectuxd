@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" /> 
+<link rel="stylesheet" href="project.css" />
+</head>
+<body class="advanced absurd">
+<div class="container"><div class="wrap">
+<form method="post" action="#welcome" id="register">
+  <fieldset>
+    <h1>Hi there! Can't wait to meet you!</h1>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password"  />
+    <input type="submit" value="Let's do this!" class="btn" />
+    <a href="#welcome" class="fb_button fb_button_medium"><span class="fb_button_text">Connect with Facebook</span></a>
+    <a href="login.html" class="switch">I'm a member!<br /> Let me in!</a>
+  </fieldset>
+</form>
+<form method="get" action="welcome.html" id="welcome">
+  <fieldset>
+    <legend>Step 2 of 2</legend>
+    <h1>Awesome! So excited to have you!</h1>
+    <label for="name">What do you want us to call you?</label>
+    <input type="text" id="name" name="email" value="yoni" />
+    <input type="submit" value="Yeah, that sounds about right." class="btn">
+    <a href="welcome.html?email=yoni" class="sec">skip this step &raquo;</a>
+  </fieldset>
+
+</form>
+</div></div>
+<script src="jquery.min.js"></script>
+<script src="project.js"></script>
+</body>
+</html>

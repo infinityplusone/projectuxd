@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="js">
+<head>
+<title>Register</title>
+<link rel="stylesheet" href="project.css" />
+</head>
+<body>
+<div class="steps">
+  <a href="#register-1" id="register" title="Enter your email address"><img src="register.png" alt="Enter your email address" /></a>
+  <a href="#step-2" id="register-1"><img src="register-1.png" alt="Press the button to continue" /></a>
+  <a href="#welcome" id="step-2"><img src="step-2.png" alt="Press the button to continue" /></a>
+  <a href="../" id="welcome"><img src="welcome.png" alt="Hi there!" /></a>
+</div>
+<script src="jquery.min.js"></script>
+<script>
+// location refers to the URL of the page.
+// location.hash refers to the part of the href beginning with the "#"
+// here, we are checking if the hash is empty, and, if it is, we are setting it to the id
+// of the first state, in this case "register"
+if(location.hash=='') {
+  location.hash = '#register';
+}
+// the rest of this Javascript uses jQuery.
+// in jQuery, if you want to select a specific element by its id, you use: $('#ELEMENT_ID')
+// so, here, we are asking for the element with an id matching the location's
+// hash (which we just set), then showing it 
+$(location.hash).show();
+
+// in jQuery, if you want to select elements that have a certain class, you use $('.CLASS_NAME')
+// here, we are asking for all links (A tags) that are descendents (contained within)
+// elements with the class "steps"
+// we are then adding an event handler for the "click" event of each of these links
+$('.steps a').click(function(e) {
+  // "this" (without quotes) refers to the element that was clicked on
+  // so, when a user clicks on one of these links, that link is hidden
+  $(this).hide();
+  // since each of these links is an anchor link (with a #) referring to another element on the page,
+  // we can simply use the link's hash (the part of the href beginning with the "#") as an id selector
+  // so, we are asking for the element with an id matching the link's hash, then showing it 
+  $(this.hash).show();
+});
+</script>
+</body>
+</html>

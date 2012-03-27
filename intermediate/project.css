@@ -1,0 +1,18 @@
+body {
+  text-align:center;
+  margin: 0 0 1em;
+}
+img {
+  border:0;
+}
+a {
+  display:block;
+  padding-top:1em;
+}
+.no-js .steps a {
+  padding-bottom:1000px;
+  background:transparent url(../cmn/arrow-down.png) no-repeat 50% 500px;
+}
+.js .steps a {
+  display:none;
+}

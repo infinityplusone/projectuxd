@@ -1,0 +1,134 @@
+/* DEFAULT STYLES */
+html, body, div, dl, dt, dd, h1, h2, h3, h4, h5, h6, ul, pre, code, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0 none; }
+
+html, body {
+  height: 100%;
+  text-align: left;
+  font-family: "Trebuchet MS", arial, sans-serif;
+  font-size: 13px;
+  color: #212121; }
+
+html {
+  min-height: 1px;
+  height: auto !important;
+  height: 1px; }
+
+header, hgroup, nav, article, aside, section, footer, details, summary, figure, menu, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  display: block; }
+  
+a, a:link, a:hover {
+  color: #333399;
+  text-decoration:none;
+}
+
+li {
+  line-height:2em;
+  list-style:none;
+}
+article {
+  margin:1em 0;
+}
+
+header {
+  text-shadow:1px 1px 0 #eee;
+}
+header h1 {
+  font-size:2em;
+  padding:0.35em 0;
+  background:#bababa;
+  color:#222;
+  margin:0;
+}
+header h1 a, header h1 a:link {
+  color:#000;
+  outline:0 none;
+}
+header h1 a:hover {
+  color:#222;
+}
+
+header h2 {
+  font-size:1.25em;
+  padding:0.35em 0;
+  background:#dfdfdf;
+  color:#444;
+  -webkit-box-shadow: 0 0 4px #111;
+  -moz-box-shadow: 0 0 4px #111;
+  -msie-box-shadow: 0 0 4px #111;
+  box-shadow: 0 0 4px #111;
+}  
+ul li {
+  cursor:pointer;
+}
+ul ul {
+  padding-bottom:1em;
+  margin:0 0.25em 1em;
+}
+ul li h4 {
+  margin-top:1em;
+  font-size:1.3em;
+  line-height:1.2em;
+/*  color:#333399;*/
+  border-bottom:2px groove #999;
+}
+ul li a {
+  color:#222;
+  display:block;
+  text-decoration:none;
+
+}
+ul li:hover h4 {
+  color:#333399;
+  border-color:#333399;
+}
+ul li em {
+  float:right;
+  position:relative;
+  top:-2em;
+  color:#444;
+}
+ul li * {
+  opacity:0.9;
+  -webkit-transition:opacity 0.15s linear;
+}
+ul li * {
+  color:#212121;
+}
+ul li:hover * {
+  opacity:1.0;
+  color:#212121;
+}
+
+ul li li li {
+  list-style-image:url('arrow-next.png');
+}
+
+.container {
+  position: relative;
+  margin: 0 auto; }
+
+.wrap {
+  display:block;
+  position: relative;
+  max-width: 750px;
+  margin: 0 auto;
+  width: 95%; }
+
+div.wrap {
+  min-height:500px;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="js">
+<head>
+<title>Log in</title>
+<link rel="stylesheet" href="project.css" />
+</head>
+<body>
+<div class="steps">
+  <a href="#register" id="login"><img src="login.png" alt="Are you a new user?"/></a>
+  <a href="#register-1" id="register" title="Enter your email address"><img src="register.png" alt="Enter your email address" /></a>
+  <a href="#step-2" id="register-1"><img src="register-1.png" alt="Press the button to continue" /></a>
+  <a href="#welcome" id="step-2"><img src="step-2.png" alt="Press the button to continue" /></a>
+  <a href="../" id="welcome"><img src="welcome.png" alt="Hi there!" /></a>
+</div>
+<script src="jquery.min.js"></script>
+<script>
+$('.steps a').click(function(e) {
+  $(this).hide();
+  $(this.hash).show();
+});
+if(location.hash=='') {
+  location.hash = '#register';
+}
+$(location.hash).show();
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome!</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" /> 
+<link rel="stylesheet" href="project.css" />
+</head>
+<body class="advanced">
+<div class="container"><div class="wrap">
+  <header>
+    <h1>
+      Hi <span id="first-name"></span>! <!-- the "first-name" span to the left is the important one for this example! -->
+    </h1>
+  </header>
+  <article class="content">
+    <p>Would you like to play a game? <a href="../"><img src="cursor.gif" class="cursor" alt="cursor" /></a></p>
+  </article>
+</div></div>
+<script src="jquery.min.js"></script>
+<script>
+(function() {
+// storing "yoni" as the default value for the first-name span up top 
+var name = "yoni";
+
+// this just refers to the querystring you see in the address bar of your browser.
+// decodeURIComponent converts into human readable key=value pairs
+var querystring = decodeURIComponent(location.search.substr(1));
+
+// we logged in with an email address, so this is asking for that parameters value (the right side of the "=")
+// this will give us any other parameters to the right of "email=" too, but we'll handle that in the next ine
+var email = querystring.split('&')[0].split('email=')[1]; 
+
+// we're pretending to be smart here, by using what's on the left of the "@" in the email address as the first name
+if(!!email) {
+  name = email.split(escape('@'))[0];
+}
+
+// this is jQuery. First, it asks for the HTML element with the id, "first-name." 
+// then it sets the HTML inside of that element to be the value of the name variable.
+$('#first-name').html(name);
+})();
+</script>
+</body>
+</html>

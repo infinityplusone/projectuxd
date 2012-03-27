@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Log in</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" /> 
+<link rel="stylesheet" href="project.css" />
+</head>
+<body class="advanced absurd">
+<div class="container"><div class="wrap">
+<form method="get" action="welcome.html" id="login">
+  <fieldset>
+    <h1>Hi there! Long time no see!</h1>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <input type="submit" value="Let me in!" id="submit" name="submit" class="btn">
+    <a href="welcome.html?email=yoni@sketchingincode.com" class="fb_button fb_button_medium"><span class="fb_button_text">Log in with Facebook</span></a>
+    <a href="#forgot" class="forgot">I Forgot My Password <span>☹</span></a>
+    <a href="register.html" class="switch">Not a member?<br/> Register now!</a>
+  </fieldset>
+</form>
+<form method="post" action="#login" id="forgot">
+  <fieldset>
+    <h1>Oops! I hate it when that happens!</h1>
+    <label for="forgot-email">Email</label>
+    <input type="email" id="forgot-email" name="forgot-email" required />
+    <a href="login.html" class="btn">Help! I need more!</a>
+    <a href="login.html" class="sec">Never mind. I remember now.</a>
+  </fieldset>
+</form>
+</div></div>
+<script src="jquery.min.js"></script>
+<script src="project.js"></script>
+</body>
+</html>
