@@ -1,0 +1,114 @@
+#help-menu {
+  position:fixed;
+  top:0;
+  right:0;
+  padding:1em 0.5em;
+}
+#help-menu .ico, #modal .ico {
+  display:inline-block;
+  text-indent:-9999px;
+  width:24px;
+  height:24px;
+  background:transparent url(tango-plus.png) no-repeat 0 0;
+  opacity:0.5;
+  *filter:alpha(opacity:50);
+  margin:0 3px;
+  padding:0;
+}
+#help-menu .ico:hover, #modal .ico:hover {
+  opacity:1.0;
+  *filter:alpha(opacity:100);
+}
+#help-menu .ico-help { background-position:-563px -549px; }
+#help-menu .ico-info { background-position:-203px -489px; }
+#help-menu .ico-home { background-position:-355px -549px; }
+#help-menu .ico-git { background-position:-52px -379px; }
+#modal .ico-close { background-position:-317px -302px; position:absolute; top:10px; right:10px; height:20px; width:20px;}
+.index #help-menu .ico-info { display: none; }
+.index #help-menu .ico-help { display: none; }
+
+#screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  text-align:center;
+  padding:0;
+/*  background: #f0f2eb;*/
+/*  opacity:0.8;*/
+  opacity:1.0;
+  background:rgba(240, 242, 235, 0.8);
+  z-index: 997;
+  -webkit-transition:opacity 2.5s linear;
+  -moz-transition:opacity 2.5s linear;
+  -msie-transition:opacity 2.5s linear;
+  transition:opacity 2.5s linear;
+}
+#screen #modal {
+  display:inline-block;
+  position:relative;
+  width:90%;
+  max-height:220px;
+  min-height:100px;
+  margin:1em auto 0;
+  padding:1.5em 1.5em 3em;
+  text-align:left;
+  overflow:auto;
+  overflow-x:hidden;
+  font-family:"Trebuchet MS", "Lucida Grande", Arial, sans-serif;
+  -webkit-box-shadow:3px 3px 7px #222;
+  -moz-box-shadow:3px 3px 7px #222;
+  -msie-box-shadow:3px 3px 7px #222;
+  box-shadow:3px 3px 7px #222;
+  background:#fff;
+}
+#modal pre {
+  margin:0;
+  white-space:pre-wrap;
+  line-height:1.4em;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-size:0.9em;
+}
+#modal a {
+  display:inline;
+}
+
+#modal h1 {
+  text-transform:capitalize;
+}
+
+#modal p {
+  max-width:780px;
+  margin:0 0 0.5em;
+  line-height:1.5em;
+}
+
+.hide {
+  display:none !important;
+  opacity:0;
+}
+/*
+@media only screen and (min-width: 600px) {
+  .ico {
+    width:48px;
+    height:48px;
+  }
+  .ico-help {
+    background-position:0 0;
+  }
+  .ico-help:hover {
+    background-position:-120px 0;
+  }
+  .ico-info {
+    background-position:0 -100px;
+  }
+  .ico-info:hover {
+    background-position:-120px -100px;
+  }
+}
+
+
+
+*/
